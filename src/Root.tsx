@@ -2,12 +2,30 @@ import "./index.css";
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { DeadlineNotification } from "./Notification/DeadlineNotification";
+import { notificationSchema } from "./Notification/schema";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="DeadlineNotification"
+        component={DeadlineNotification}
+        durationInFrames={300}
+        fps={30}
+        width={720}
+        height={1280}
+        schema={notificationSchema}
+        defaultProps={{
+          appName: "Projet",
+          title: "Deadline client",
+          message: "Livraison du rendu final demain à 18h00",
+          time: "maintenant",
+        }}
+      />
+
       <Composition
         // You can take the "id" to render a video:
         // npx remotion render HelloWorld
