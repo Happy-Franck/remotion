@@ -40,6 +40,7 @@ export const StockAdsPrime: React.FC<z.infer<typeof stockAdsPrimeSchema>> = ({
   return (
     <AbsoluteFill style={{ backgroundColor: NEON.void }}>
       <Audio src={staticFile("prime-audio.mp3")} />
+      <Audio src={staticFile("voiceover-fr.mp3")} />
       <PrimeBg />
       {order.map(({ key, C }, i) => {
         const s = SCENES[key];

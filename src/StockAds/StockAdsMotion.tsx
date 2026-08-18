@@ -1,4 +1,5 @@
-import { AbsoluteFill, Sequence } from "remotion";
+import { Audio } from "@remotion/media";
+import { AbsoluteFill, Sequence, staticFile } from "remotion";
 import { z } from "zod";
 import { FADE } from "./components/SceneKit";
 import { Subtitles } from "./components/Subtitles";
@@ -30,6 +31,8 @@ export const StockAdsMotion: React.FC<z.infer<typeof stockAdsSchema>> = ({
 }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.paper }}>
+      <Audio src={staticFile("voiceover-fr.mp3")} />
+
       {order.map(({ key, C }, i) => {
         const s = SCENES[key];
         const from = i === 0 ? s.from : s.from - FADE;

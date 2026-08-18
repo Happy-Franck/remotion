@@ -40,6 +40,7 @@ export const StockAdsGlass: React.FC<z.infer<typeof stockAdsGlassSchema>> = ({
   return (
     <AbsoluteFill style={{ backgroundColor: GLASS.skyTop }}>
       <Audio src={staticFile("glass-audio.mp3")} />
+      <Audio src={staticFile("voiceover-fr.mp3")} />
 
       <GlassBg />
 

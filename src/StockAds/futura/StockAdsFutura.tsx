@@ -35,6 +35,7 @@ export const StockAdsFutura: React.FC<z.infer<typeof stockAdsFuturaSchema>> = ({
   return (
     <AbsoluteFill style={{ backgroundColor: NEON.void }}>
       <Audio src={staticFile("futura-audio.mp3")} />
+      <Audio src={staticFile("voiceover-fr.mp3")} />
 
       <FuturaBg />
 
