@@ -18,12 +18,37 @@ import {
   StockAdsGlass,
   stockAdsGlassSchema,
 } from "./StockAds/glass/StockAdsGlass";
+import {
+  StockAdsEditorial,
+  stockAdsEditorialSchema,
+} from "./StockAds/editorial/StockAdsEditorial";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="StockAds-Editorial-4x5-ST"
+        component={StockAdsEditorial}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsEditorialSchema}
+        defaultProps={{ showSubtitles: true }}
+      />
+      <Composition
+        id="StockAds-Editorial-4x5-clean"
+        component={StockAdsEditorial}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsEditorialSchema}
+        defaultProps={{ showSubtitles: false }}
+      />
+
       <Composition
         id="StockAds-Glass-4x5-ST"
         component={StockAdsGlass}
