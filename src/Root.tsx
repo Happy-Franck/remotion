@@ -4,12 +4,110 @@ import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
 import { DeadlineNotification } from "./Notification/DeadlineNotification";
 import { notificationSchema } from "./Notification/schema";
+import { StockAdsMotion, stockAdsSchema } from "./StockAds/StockAdsMotion";
+import { TOTAL_FRAMES } from "./StockAds/theme";
+import {
+  StockAdsFutura,
+  stockAdsFuturaSchema,
+} from "./StockAds/futura/StockAdsFutura";
+import {
+  StockAdsPrime,
+  stockAdsPrimeSchema,
+} from "./StockAds/prime/StockAdsPrime";
+import {
+  StockAdsGlass,
+  stockAdsGlassSchema,
+} from "./StockAds/glass/StockAdsGlass";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="StockAds-Glass-4x5-ST"
+        component={StockAdsGlass}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsGlassSchema}
+        defaultProps={{ showSubtitles: true }}
+      />
+      <Composition
+        id="StockAds-Glass-4x5-clean"
+        component={StockAdsGlass}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsGlassSchema}
+        defaultProps={{ showSubtitles: false }}
+      />
+
+      <Composition
+        id="StockAds-Prime-4x5-ST"
+        component={StockAdsPrime}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsPrimeSchema}
+        defaultProps={{ showSubtitles: true }}
+      />
+      <Composition
+        id="StockAds-Prime-4x5-clean"
+        component={StockAdsPrime}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsPrimeSchema}
+        defaultProps={{ showSubtitles: false }}
+      />
+
+      <Composition
+        id="StockAds-Futura-4x5-ST"
+        component={StockAdsFutura}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsFuturaSchema}
+        defaultProps={{ showSubtitles: true }}
+      />
+      <Composition
+        id="StockAds-Futura-4x5-clean"
+        component={StockAdsFutura}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsFuturaSchema}
+        defaultProps={{ showSubtitles: false }}
+      />
+
+      <Composition
+        id="StockAds-4x5-ST"
+        component={StockAdsMotion}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsSchema}
+        defaultProps={{ showSubtitles: true }}
+      />
+      <Composition
+        id="StockAds-4x5-clean"
+        component={StockAdsMotion}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={stockAdsSchema}
+        defaultProps={{ showSubtitles: false }}
+      />
+
       <Composition
         id="DeadlineNotification"
         component={DeadlineNotification}
